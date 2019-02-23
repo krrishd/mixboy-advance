@@ -5,7 +5,10 @@
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.5",
+    "react-youtube": "^7.9.0",
+    "webmidi": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

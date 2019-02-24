@@ -2717,6 +2717,10 @@ duplexify@^3.4.2, duplexify@^3.6.0:
     readable-stream "^2.0.0"
     stream-shift "^1.0.0"
 
+easytimer.js@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/easytimer.js/-/easytimer.js-3.0.1.tgz#ea75cac03d8824f0ac75c15f32c0cc7b18081b21"
+
 ecc-jsbn@~0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/ecc-jsbn/-/ecc-jsbn-0.1.2.tgz#3a83a904e54353287874c564b7549386849a98c9"

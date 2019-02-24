@@ -9,6 +9,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
     "react-youtube": "^7.9.0",
+    "superagent": "^4.1.0",
     "webmidi": "^2.3.2"
   },
   "scripts": {

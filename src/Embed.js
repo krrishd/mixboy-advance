@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
+import superagent from 'superagent';
 import { Timer } from 'easytimer.js';
 import WebMidi from 'webmidi';
 
@@ -15,6 +16,8 @@ class Embed extends Component {
       sliceIncrement: 1,
       play: false,
       playerInterval: null,
+      width: 640,
+      height: 390,
     }
   }
 
@@ -62,7 +65,7 @@ class Embed extends Component {
         const recordNote = this.props.recordNote;
     
         WebMidi.enable(function (err) {
-          if (err) {
+          if (err || !WebMidi.inputs[0]) {
             console.log("WebMidi could not be enabled.", err);
           } else {
             console.log("WebMidi enabled!");
@@ -100,13 +103,14 @@ class Embed extends Component {
   render() {
     if (this.props.provider === "yt") {
       const videoId = this.props.url.split('?v=')[1];
+
       return (
         <div className="Embed">
           <YouTube
             videoId={videoId}
             opts={{
               width: window.screen.width * 0.6,
-              height:(390/640) * (window.screen.width * 0.6)
+              height: (390/640) * (window.screen.width * 0.6)
             }}
             onReady={this._onReady}
           />

@@ -8,17 +8,21 @@ class Sequencer extends Component {
   constructor(props) {
     super(props);
 
+    const params = (new URL(document.location)).searchParams;
+
     this.state = {
-      url: '',
-      urlForEmbed: null,
-      embedProvider: null,
+      url: params.get('url') || '',
+      urlForEmbed: params.get('url') || null,
+      embedProvider: params.get('url') ? 'yt' : null,
       listening: false,
       listenStart: null,
       listenEnd: null,
       notesPlayed: [],
-      finalSequence: null,
+      finalSequence: params.get('seq') ? JSON.parse(params.get('seq')) : null,
       play: false,
     };
+
+    console.log(this.state);
 
     this.parseURL = this.parseURL.bind(this);
     this.recordNote = this.recordNote.bind(this);
@@ -68,6 +72,8 @@ class Sequencer extends Component {
 
           this.setState({
             finalSequence,
+          }, () => {
+            window.history.pushState(null, null, `?url=${this.state.urlForEmbed}&seq=${JSON.stringify(finalSequence)}`);
           });
         });
       });
@@ -106,6 +112,7 @@ class Sequencer extends Component {
         <input
           type="url"
           placeholder="Enter YouTube link here..."
+          value={this.state.url}
           onChange={this.parseURL}
         />
         {

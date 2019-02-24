@@ -94,7 +94,6 @@ class App extends Component {
         <Sequencer
           nextTick={this.nextTick}
           resetTick={this.resetTick}
-          currentTick={this.state.currentTick}
           updateBackground={this.updateBackground}
         />
         <div className="Lights">

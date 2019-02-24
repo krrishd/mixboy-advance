@@ -118,14 +118,16 @@ input[type="url"]:focus {
   display: inline-block;
   vertical-align: top;
   position: relative;
-  left: -7.5%;
+  left: -7%;
 }
 
 .buttons {
-  margin-right: 15px;
+  margin-right: -15px;
+  margin-top: 25px;
+  width: 15%;
 }
 
-.buttons button {
+/*.buttons button {
   font-size: 2em;
   font-family: inherit;
   font-style: inherit;
@@ -139,6 +141,70 @@ input[type="url"]:focus {
   background: linear-gradient(to right, #d3cce3, #e9e4f0);
   border-bottom: 3px solid #b2bec3;
   border-right: 3px solid #b2bec3;
+}*/
+
+.buttons button {
+  display: block;
+  padding: 10px 30px;
+  width: 150px;
+  color: white;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: inherit;
+  font-style: italic;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.3em;
+  transition: all .25s;
+  background-color: #3498db;
+  border: none;
+  margin-bottom: 20px;
+  margin-right:0;
+}
+
+button:hover {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+button::before {
+  bottom: -15px;
+  height: 15px;
+  width: 100%;
+  left: 8px;
+  -webkit-transform: skewX(45deg);
+  transform: skewX(45deg);
+  background-color: #196090;
+}
+
+button:hover::before {
+  bottom: -5px;
+  height: 5px;
+  left: 3px;
+}
+
+button::after {
+  right: -15px;
+  height: 100%;
+  width: 15px;
+  bottom: -8px;
+  -webkit-transform: skewY(45deg);
+  transform: skewY(45deg);
+  background-color: #124364;
+}
+
+button:hover::after {
+  right: -5px;
+  width: 5px;
+  bottom: -3px;
+}
+
+button::before, button::after {
+  position: absolute;
+  content: '';
+  transition: all .25s;
 }
 
 button:focus {
@@ -162,6 +228,18 @@ button:focus {
 .light.on {
   background: red;
   height: 30px;
+}
+
+.light.on:before {
+  display: block;
+  content: '';
+  background: url('/favicon.gif');
+  background-size: 70px 70px;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  bottom: 60px;
+  left: 50px;
 }
 
 .light.off {

@@ -37,83 +37,51 @@ class App extends Component {
 
             <div className="App">
 
-                <div id="header">
+                <div id="page">
 
-                    サンプラー
+                    <div id="header">
 
-                </div>
+                        <i> MIXBOY ADVANCE </i>
 
-                <div id="track">
-                    <input
-                        id="url-input"
-                        type="url"
-                        placeholder="Enter YouTube link here..."
-                        onChange={this.parseURL}
-                    />
-                    {
-                        this.state.urlForEmbed
-                            ? <Embed url={this.state.urlForEmbed} provider={this.state.embedProvider} />
-                            : <div id="empty"> </div>
-                    }
+                        サンプラー
+
+                    </div>
+
+                    <div id="track">
+                        <input
+                            id="url-input"
+                            type="url"
+                            placeholder="Enter YouTube link here..."
+                            onChange={this.parseURL}
+                        />
+                        {
+                            this.state.urlForEmbed
+                                ? <Embed url={this.state.urlForEmbed} provider={this.state.embedProvider} />
+                                : <div id="empty"> </div>
+                        }
+                    </div>
+
+                    <div id="control">
+                        <button id="playButton"></button>
+
+                        <button id="recordButton"></button>
+                    
+                    </div>
+                
                 </div>
 
                 <div id="sequencer">
-
-                    <span id="measure"></span>
                     
                     <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
+                    <span id="beat"></span>
+                    <span id="beat"></span>
+                    <span id="beat"></span>
 
                     <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-
                     <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-
                     <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
+                    <span id="beat"></span>                    
 
-                    <span id="measure"></span>
-
-                    <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-
-                    <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-
-                    <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-
-                    <span id="beat"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-                    <span id="seq"></span>
-
-                    <span id="measure"></span>
-
-                    
-
-                </div>
-
-                <div id="control">
-                    <button id="playButton"></button>
-
-                    <button id="recordButton"></button>
-                
                 </div>
                 
 

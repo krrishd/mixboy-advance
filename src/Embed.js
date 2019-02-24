@@ -39,11 +39,21 @@ class Embed extends Component {
   }
 
   render() {
+    const opts = {
+        height: '144',
+        width: '256',
+        playerVars: { 
+            autoplay: 1
+          }
+    }
+
     if (this.props.provider === "yt") {
       const videoId = this.props.url.split('?v=')[1];
       return (
-        <YouTube
+        <YouTube id="player"
+
           videoId={videoId}
+          opts={opts}
           onReady={this._onReady}
         />
       );

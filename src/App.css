@@ -1,5 +1,6 @@
 .App {
   /* text-align: center; */
+  width: 100%;
 }
 
 .App-logo {
@@ -47,26 +48,10 @@
     background-color: #c5f2ff;
 }
 
-#track {
-    text-align: left;
-    margin-left: 10%;
-    margin-bottom: 20px;
-}
-
-#url-input {
-    width: 250px;
-    padding: 2px;
-    border: 2px;
-
-    font-style: italic;
-
-    margin-bottom: 5px;
-    outline: none;
-}
-
 #empty {
-    height: 144px;
-    width: 256px;
+    height: 396px;
+    width: 704px;
+    margin: 0 auto;
 
     text-align: center;
     font-style: italic;
@@ -75,15 +60,79 @@
     border-style: inset;
     border-color: initial;
     border-image: initial;
-    /* background-color: #eeeeee; */
 }
 
-#newTrackButton {
+#track {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#url-input {
+    width: 704px;
+    padding: 2px;
+    border: 2px;
+
+    font-style: italic;
     text-align: left;
-    margin-left: 10%;
+
+    margin-bottom: 10px;
+    margin-left: 0px;
+    outline: none;
+}
+
+#sequencer {
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 12%;
+    margin-right: 10%;
+}
+#seq {
+    background-color: rgb(206, 125, 253);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+
+    width: 20px;
+    height: 6px;
+}
+#beat {
+    background-color: rgb(144, 125, 253);
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 7px;
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    width: 15px;
+    height: 15px;
+}
+#measure {
+    margin: 0;
+    background-color: rgb(104, 104, 104);
+    margin-left: 10px;
+    margin-right: 10px;
+
+    width: 5px;
+    height: 30px;
+}
+
+#control {
+    display: flex;
+    /* margin: 0 auto; */
+}
+
+#playButton {
+    margin: 0 auto;
+
+    /* margin-left: 20px;
+    margin-right: 20px; */
+
+    text-align: center;
 
     border: 0;
-    border-radius: 2px;
+    border-radius: 4px;
     outline: none;
 
     width: 50px;
@@ -91,9 +140,33 @@
 
     background-color: rgb(175, 255, 228);
 }
-#newTrackButton:hover {
+#playButton:hover {
     background-color: rgb(152, 236, 208);
 }
-#newTrackButton:active {
+#playButton:active {
+    transform: scale(0.9);
+}
+
+#recordButton {
+    margin: 0 auto;
+
+    /* margin-left: 20px;
+    margin-right: 20px; */
+
+    text-align: center;
+
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+
+    width: 50px;
+    height: 30px;
+
+    background-color: rgb(255, 175, 175);
+}
+#recordButton:hover {
+    background-color: rgb(236, 152, 152);
+}
+#recordButton:active {
     transform: scale(0.9);
 }

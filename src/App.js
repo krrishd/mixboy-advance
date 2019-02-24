@@ -57,9 +57,65 @@ class App extends Component {
                     }
                 </div>
 
-                <button id="newTrackButton">
+                <div id="sequencer">
 
-                </button>
+                    <span id="measure"></span>
+                    
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="measure"></span>
+
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="beat"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+                    <span id="seq"></span>
+
+                    <span id="measure"></span>
+
+                    
+
+                </div>
+
+                <div id="control">
+                    <button id="playButton"></button>
+
+                    <button id="recordButton"></button>
+                
+                </div>
+                
 
 
 

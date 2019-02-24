@@ -40,8 +40,8 @@ class Embed extends Component {
 
   render() {
     const opts = {
-        height: '144',
-        width: '256',
+        height: '396',
+        width: '704',
         playerVars: { 
             autoplay: 1
           }

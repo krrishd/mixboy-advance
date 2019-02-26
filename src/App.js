@@ -80,9 +80,9 @@ class App extends Component {
       .map((item, index) => (index === this.state.currentTick) ? true : false)
       .map((on, index) => {
           if (on) {
-            return <span className="light on fadeIn" />
+            return <span key={index} className="light on fadeIn" />
           } else {
-            return <span className="light off" style={{ background: rainbow[index] }} />;
+            return <span key={index} className="light off" style={{ background: rainbow[index] }} />;
           }
       });
 

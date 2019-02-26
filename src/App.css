@@ -55,7 +55,7 @@ h1, h2, h3 {
   font-family: "gamecubendualset", Coiny, sans-serif;
   font-style: italic;
   font-size: 3em;
-  margin-bottom: 25px;
+  margin-bottom: 35px;
   margin-top: 0;
   color: #fff;
   text-shadow: 1px 1px 1px #2f3640,
@@ -96,6 +96,10 @@ h1, h2, h3 {
 .Embed {
   display: block;
   margin-left: auto;
+}
+
+.machine:focus {
+  outline: none;
 }
 
 input[type="url"] {

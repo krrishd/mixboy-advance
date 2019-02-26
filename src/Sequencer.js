@@ -20,12 +20,14 @@ class Sequencer extends Component {
       notesPlayed: [],
       finalSequence: params.get('seq') ? JSON.parse(params.get('seq')) : null,
       play: false,
+      sequencerIsFocused: false,
     };
 
-    console.log(this.state);
+    this.SequencerRef = React.createRef();
 
     this.parseURL = this.parseURL.bind(this);
     this.recordNote = this.recordNote.bind(this);
+    this.unfocus = this.unfocus.bind(this);
   }
 
   record() {
@@ -38,10 +40,12 @@ class Sequencer extends Component {
       notesPlayed: [],
       finalSequence: null,
       play: false,
+      allowedToPlay: false,
     }, () => {
       t.start({
         countdown: true,
-        startValues: { seconds: 8 }
+        startValues: { seconds: 8 },
+        precision: 'secondTenths',
       });
 
       t.addEventListener('secondsUpdated', this.props.nextTick)
@@ -72,6 +76,7 @@ class Sequencer extends Component {
 
           this.setState({
             finalSequence,
+            allowedToPlay: true,
           }, () => {
             window.history.pushState(null, null, `?url=${this.state.urlForEmbed}&seq=${JSON.stringify(finalSequence)}`);
           });
@@ -106,9 +111,17 @@ class Sequencer extends Component {
     this.setState(newState);
   }
 
+  unfocus(e) {
+    this.setState({
+      embedIsFocused: false,
+    });
+  }
+
   render() {
     return (
-      <div className="Sequencer">
+      <div
+        className="Sequencer"
+      >
         <input
           type="url"
           placeholder="Enter YouTube link here..."
@@ -118,7 +131,12 @@ class Sequencer extends Component {
         {
           this.state.urlForEmbed
             ? (
-                <div className="machine animated bounceInUp">
+                <div
+                  className="machine animated bounceInUp"
+                  ref={this.SequencerRef}
+                  onBlur={this.unfocus}
+                  tabIndex={1}
+                >
                   <div className="buttons">
                     <button
                       className="record"
@@ -146,9 +164,11 @@ class Sequencer extends Component {
                     provider={this.state.embedProvider}
                     recordNote={this.recordNote}
                     play={this.state.play}
+                    allowedToPlay={this.state.allowedToPlay}
                     sequence={this.state.finalSequence}
                     updateBackground={this.props.updateBackground}
                     nextTick={this.props.nextTick}
+                    sequencerRef={this.SequencerRef}
                   />
               </div>
             )
